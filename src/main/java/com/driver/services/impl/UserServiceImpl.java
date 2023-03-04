@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
             country.setUser(user);
 
             user.setOriginalIp(ip);
-            user.setOrigionalCountry(country);
+            user.setOriginalCountry(country);
 
             return userRepository3.save(user);
         }

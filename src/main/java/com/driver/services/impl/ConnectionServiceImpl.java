@@ -33,7 +33,7 @@ public class ConnectionServiceImpl implements ConnectionService {
         if(countryName.equalsIgnoreCase("AUS")) ccode=CountryName.AUS.toCode();
         if(countryName.equalsIgnoreCase("CHI")) ccode=CountryName.CHI.toCode();
 
-        Country country=user.getOrigionalCountry();
+        Country country=user.getOriginalCountry();
         String code=country.getCode();
 
         if(code.equals(ccode)) {
@@ -89,7 +89,7 @@ public class ConnectionServiceImpl implements ConnectionService {
             String str = user1.getMaskedIp();
             String cc = str.substring(0,3); //chopping country code = cc
 
-            if(cc.equals(user.getOrigionalCountry().getCode()))
+            if(cc.equals(user.getOriginalCountry().getCode()))
                 return user;
             else {
                 String countryName = "";
@@ -115,10 +115,10 @@ public class ConnectionServiceImpl implements ConnectionService {
 
         }
         else {
-            if (user1.getOrigionalCountry().equals(user.getOrigionalCountry())) {
+            if (user1.getOriginalCountry().equals(user.getOriginalCountry())) {
                 return user;
             }
-            String countryName = user1.getOrigionalCountry().getCountryName().toString();
+            String countryName = user1.getOriginalCountry().getCountryName().toString();
             User user2 = connect(senderId, countryName);
             if (!user2.getConnected()) {
                 throw new Exception("Cannot establish communication");
