@@ -64,7 +64,7 @@ public class ConnectionServiceImpl implements ConnectionService {
             }
         }
 
-        throw new Exception("Unable to connect");
+        throw new Exception("Cannot establish communication");
 
 
     }
